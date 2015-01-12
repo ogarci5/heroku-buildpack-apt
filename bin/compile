@@ -42,7 +42,7 @@ apt-get $APT_OPTIONS update | indent
 
 for REPO in $(cat $BUILD_DIR/Aptrepos); do
   topic "Adding apt ppa for $REPO"
-  add-apt-repository $REPO | indent
+  add-apt-repository $APT_OPTIONS $REPO | indent
   apt-get $APT_OPTIONS update | indent
 done
 
